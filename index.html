@@ -97,17 +97,18 @@
   <img class="city" src="img/rabbid-city.jpg" alt="Rabbid: a raccoon in aviator sunglasses and a leather jacket on a neon-lit city street at night">
   <div class="wrap">
     <h1>Rabbid <span>Raccoon</span></h1>
-    <div class="tag"><span id="typed">Running a crew of free AIs on Arch Linux</span><span class="cursor">&nbsp;</span></div>
+    <div class="tag"><span id="typed">I run a crew of AIs on a laptop with no GPU</span><span class="cursor">&nbsp;</span></div>
     <div class="chips">
       <span class="chip">🐧 Omarchy + Hyprland</span>
       <span class="chip">🤖 AI crew wrangler</span>
       <span class="chip">🏠 home lab</span>
-      <span class="chip">🆓 free or skip it</span>
+      <span class="chip">🆓 zero GPU · zero dollars</span>
     </div>
     <div class="chips links">
       <a class="chip" href="https://github.com/2db2du-byte">🐙 GitHub</a>
-      <a class="chip" href="https://ollama.com/2db2du">🦙 Ollama</a>
       <a class="chip" href="https://huggingface.co/RabbidRaccoon">🤗 Hugging Face</a>
+      <a class="chip" href="https://ollama.com/2db2du">🦙 Ollama</a>
+      <a class="chip" href="https://bsky.app/profile/rabbid-raccoon.bsky.social">🦋 Bluesky</a>
     </div>
   </div>
 </header>
@@ -119,10 +120,10 @@
     <div class="about">
       <img class="avatar" src="img/rabbid-avatar.jpg" alt="Rabbid's avatar: the raccoon in sunglasses">
       <ul>
-        <li>🐧 I run <a href="https://omarchy.org">Omarchy</a> (Arch Linux + Hyprland) and I'm teaching myself Linux, one command at a time.</li>
-        <li>🤖 A whole crew of AI helpers (Rick, Morty, Summer, Birdperson…) checks my backups, home lab and devices and reports back every day.</li>
-        <li>🎩 I talk to Joshua, my offline voice butler: Jeeves manners, George Carlin mouth.</li>
-        <li>🧪 Wild ideas get tested on cheap, spare hardware before they get built for real.</li>
+        <li>🧪 <b>I run an AI crew.</b> Rick, Morty, Birdperson, Beth and the gang babysit my backups, home lab and gadgets, then report in, in character, every single day.</li>
+        <li>🎩 <b>My butler swears.</b> Joshua sleeps until he hears his name, then answers out loud with the manners of Jeeves and the mouth of George Carlin.</li>
+        <li>🧠 <b>Zero GPU, zero subscriptions.</b> Free cloud AIs when I'm online, local AIs on the CPU when I'm not. The internet goes down, the crew keeps working.</li>
+        <li>🐧 <b>Omarchy daily driver.</b> A few weeks ago I didn't know what <code>sudo</code> did. Now I run <a href="https://omarchy.org">Arch + Hyprland</a> and break things on purpose in my lab.</li>
       </ul>
     </div>
   </section>
@@ -165,7 +166,7 @@
   <div class="wrap">
     <q>I love deadlines. I love the whooshing noise they make as they go by.</q>
     — Douglas Adams<br><br>
-    <a href="https://github.com/2db2du-byte">GitHub</a> · <a href="https://huggingface.co/RabbidRaccoon">Hugging Face</a> · built with <a href="https://claude.com/claude-code">Claude</a>
+    <a href="https://github.com/2db2du-byte">GitHub</a> · <a href="https://huggingface.co/RabbidRaccoon">Hugging Face</a> · <a href="https://ollama.com/2db2du">Ollama</a> · <a href="https://bsky.app/profile/rabbid-raccoon.bsky.social">Bluesky</a> · built with <a href="https://claude.com/claude-code">Claude</a>
   </div>
 </footer>
 
@@ -173,11 +174,11 @@
   // Typing intro: cycles through a few lines, like the GitHub profile.
   (() => {
     const lines = [
-      "Running a crew of free AIs on Arch Linux",
-      "Mission Control lives on page 10",
-      "My butler answers to \"Joshua\"",
+      "I run a crew of AIs on a laptop with no GPU",
+      "My butler has the mouth of George Carlin",
+      "Rick lives in your browser now",
+      "Zero GPU. Zero dollars. Zero excuses.",
       "If it ain't free, skip it",
-      "Learning Linux one command at a time",
     ];
     const el = document.getElementById("typed");
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
