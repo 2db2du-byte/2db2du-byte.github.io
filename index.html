@@ -48,6 +48,8 @@
   .tag .cursor { display: inline-block; width: .6em; background: var(--neon); animation: blink 1s steps(1) infinite; }
   @keyframes blink { 50% { opacity: 0; } }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .links .chip { color: var(--text); border-color: var(--neon); }
+  .links .chip:hover { box-shadow: 0 0 14px rgba(57,255,20,.45); text-decoration: none; }
   .chip { font: 600 13px "Fira Code", monospace; padding: 6px 12px; border-radius: 99px;
           background: rgba(17,15,34,.75); border: 1px solid var(--line); backdrop-filter: blur(4px); }
 
@@ -101,6 +103,10 @@
       <span class="chip">🤖 AI crew wrangler</span>
       <span class="chip">🏠 home lab</span>
       <span class="chip">🆓 free or skip it</span>
+    </div>
+    <div class="chips links">
+      <a class="chip" href="https://github.com/2db2du-byte">🐙 GitHub</a>
+      <a class="chip" href="https://huggingface.co/RabbidRaccoon">🤗 Hugging Face</a>
     </div>
   </div>
 </header>
@@ -156,7 +162,7 @@
   <div class="wrap">
     <q>I love deadlines. I love the whooshing noise they make as they go by.</q>
     — Douglas Adams<br><br>
-    <a href="https://github.com/2db2du-byte">github.com/2db2du-byte</a> · built with <a href="https://claude.com/claude-code">Claude</a>
+    <a href="https://github.com/2db2du-byte">GitHub</a> · <a href="https://huggingface.co/RabbidRaccoon">Hugging Face</a> · built with <a href="https://claude.com/claude-code">Claude</a>
   </div>
 </footer>
 
