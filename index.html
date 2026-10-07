@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rabbid Raccoon</title>
+<meta name="description" content="Rabbid Raccoon: home lab tinkerer, AI crew wrangler, Linux student on Omarchy. Free, local, self-hosted projects.">
+<meta property="og:title" content="Rabbid Raccoon">
+<meta property="og:description" content="Home lab tinkerer · AI crew wrangler · Linux student on Omarchy 🦝">
+<meta property="og:image" content="https://2db2du-byte.github.io/img/rabbid-city.jpg">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07060f;
+    --panel: #110f22;
+    --panel-2: #17142e;
+    --text: #e9e7ff;
+    --muted: #a19dc4;
+    --neon: #39ff14;
+    --pink: #ff2fb3;
+    --cyan: #19e3ff;
+    --line: #2a2550;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.6 "Space Grotesk", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--cyan); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; min-height: 78vh; max-height: 820px; display: flex; align-items: flex-end; overflow: hidden; }
+  .hero img.city { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+  .hero::after { content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(7,6,15,.15) 0%, rgba(7,6,15,.35) 55%, var(--bg) 100%); }
+  .hero .wrap { position: relative; z-index: 1; padding-bottom: 48px; width: 100%; }
+  h1 { font-size: clamp(42px, 9vw, 92px); line-height: .95; margin: 0 0 12px; letter-spacing: -1px;
+       text-shadow: 0 0 18px rgba(255,47,179,.55), 0 0 42px rgba(25,227,255,.35); }
+  h1 span { color: var(--neon); text-shadow: 0 0 18px rgba(57,255,20,.6); }
+  .tag { font: 600 clamp(15px, 2.4vw, 19px)/1.4 "Fira Code", monospace; color: var(--neon); min-height: 1.4em; }
+  .tag .cursor { display: inline-block; width: .6em; background: var(--neon); animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .chip { font: 600 13px "Fira Code", monospace; padding: 6px 12px; border-radius: 99px;
+          background: rgba(17,15,34,.75); border: 1px solid var(--line); backdrop-filter: blur(4px); }
+
+  /* ---------- sections ---------- */
+  section { padding: 56px 0 8px; }
+  h2 { font-size: 30px; margin: 0 0 20px; display: flex; align-items: center; gap: 12px; }
+  h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--pink), transparent); }
+
+  .about { display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: start; }
+  .avatar { width: 220px; height: 220px; border-radius: 24px; border: 2px solid var(--neon);
+            box-shadow: 0 0 24px rgba(57,255,20,.35); object-fit: cover; }
+  .about ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .about li { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .card { display: block; background: linear-gradient(160deg, var(--panel-2), var(--panel)); color: var(--text);
+          border: 1px solid var(--line); border-radius: 18px; padding: 20px; transition: transform .18s, border-color .18s, box-shadow .18s; }
+  .card:hover { transform: translateY(-3px); border-color: var(--pink); box-shadow: 0 10px 30px rgba(255,47,179,.18); text-decoration: none; }
+  .card .e { font-size: 30px; }
+  .card h3 { margin: 8px 0 4px; font-size: 20px; }
+  .card h3 code { font: 600 15px "Fira Code", monospace; color: var(--neon); }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .stack { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .stack img { height: 48px; }
+  .rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .rule { background: var(--panel); border-left: 3px solid var(--cyan); border-radius: 10px; padding: 14px 16px; }
+  .rule b { display: block; color: var(--cyan); }
+
+  footer { margin-top: 64px; padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: 15px; }
+  footer q { display: block; color: var(--text); font-style: italic; margin-bottom: 10px; }
+
+  @media (max-width: 640px) {
+    .hero { min-height: 62vh; }
+    .about { grid-template-columns: 1fr; justify-items: center; }
+    .avatar { width: 180px; height: 180px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) { .tag .cursor { animation: none; } .card { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="city" src="img/rabbid-city.jpg" alt="Rabbid: a raccoon in aviator sunglasses and a leather jacket on a neon-lit city street at night">
+  <div class="wrap">
+    <h1>Rabbid <span>Raccoon</span></h1>
+    <div class="tag"><span id="typed">Running a crew of free AIs on Arch Linux</span><span class="cursor">&nbsp;</span></div>
+    <div class="chips">
+      <span class="chip">🐧 Omarchy + Hyprland</span>
+      <span class="chip">🤖 AI crew wrangler</span>
+      <span class="chip">🏠 home lab</span>
+      <span class="chip">🆓 free or skip it</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2>🦝 About me</h2>
+    <div class="about">
+      <img class="avatar" src="img/rabbid-avatar.jpg" alt="Rabbid's avatar: the raccoon in sunglasses">
+      <ul>
+        <li>🐧 I run <a href="https://omarchy.org">Omarchy</a> (Arch Linux + Hyprland) and I'm teaching myself Linux, one command at a time.</li>
+        <li>🤖 A whole crew of AI helpers (Rick, Morty, Summer, Birdperson…) checks my backups, home lab and devices and reports back every day.</li>
+        <li>🎩 I talk to Joshua, my offline voice butler: Jeeves manners, George Carlin mouth.</li>
+        <li>🧪 Wild ideas get tested on cheap, spare hardware before they get built for real.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>🚀 Things I've built</h2>
+    <div class="grid">
+      <a class="card" href="https://github.com/2db2du-byte/crew-dashboard"><div class="e">🛸</div><h3>Mission Control</h3><p>A Rick and Morty themed dashboard and API for my home AI crew: reports, launch pad, offline library search.</p></a>
+      <a class="card" href="https://github.com/2db2du-byte/crew"><div class="e">🧪</div><h3>Rick's crew</h3><p>Scheduled AI jobs on n8n plus a "brain switch": free cloud AIs when online, local AIs when the internet's out.</p></a>
+      <a class="card" href="https://github.com/2db2du-byte/hey-joshua"><div class="e">🎩</div><h3>Hey Joshua</h3><p>An offline, always-listening voice butler with a British accent. Silent until you say his name.</p></a>
+      <a class="card" href="https://github.com/2db2du-byte/ai-router"><div class="e">🧠</div><h3><code>joshua</code></h3><p>Terminal chat that sends every message to the best local AI model for the job.</p></a>
+      <a class="card" href="https://github.com/2db2du-byte/homelab"><div class="e">🏠</div><h3>homelab</h3><p>One command to run self-hosted apps: Nextcloud, Paperless, Mealie, Immich and friends.</p></a>
+      <a class="card" href="https://github.com/2db2du-byte/searxng"><div class="e">🔎</div><h3>Private search</h3><p>My own SearXNG search engine, started on demand, that my AIs search through too.</p></a>
+    </div>
+    <p style="color:var(--muted)">All free, all MIT licensed. Take them, break them, make them better.</p>
+  </section>
+
+  <section id="stack">
+    <h2>🛠️ What I work with</h2>
+    <div class="stack">
+      <img src="https://skillicons.dev/icons?i=linux,arch,mint,bash,git,github,docker,py,neovim,obsidian,cloudflare,discord,apple,bots,md&theme=dark&perline=15" alt="Linux, Arch, Mint, Bash, Git, GitHub, Docker, Python, Neovim, Obsidian, Cloudflare, Discord, Apple, Bots, Markdown">
+    </div>
+  </section>
+
+  <section id="rules">
+    <h2>📜 House rules</h2>
+    <div class="rules">
+      <div class="rule"><b>If it ain't free, skip it</b>Free and open source first, every time.</div>
+      <div class="rule"><b>Local beats cloud</b>Private, self-hosted, works when the internet doesn't.</div>
+      <div class="rule"><b>Prototype first</b>Test on cheap hardware before committing to a real build.</div>
+      <div class="rule"><b>Nothing at boot</b>Unless I say so. My laptop, my rules.</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <q>I love deadlines. I love the whooshing noise they make as they go by.</q>
+    — Douglas Adams<br><br>
+    <a href="https://github.com/2db2du-byte">github.com/2db2du-byte</a> · built with <a href="https://claude.com/claude-code">Claude</a>
+  </div>
+</footer>
+
+<script>
+  // Typing intro: cycles through a few lines, like the GitHub profile.
+  (() => {
+    const lines = [
+      "Running a crew of free AIs on Arch Linux",
+      "Mission Control lives on page 10",
+      "My butler answers to \"Joshua\"",
+      "If it ain't free, skip it",
+      "Learning Linux one command at a time",
+    ];
+    const el = document.getElementById("typed");
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let i = 0, n = 0, deleting = false;
+    const tick = () => {
+      const line = lines[i];
+      n += deleting ? -1 : 1;
+      el.textContent = line.slice(0, n);
+      let wait = deleting ? 28 : 55;
+      if (!deleting && n === line.length) { deleting = true; wait = 1600; }
+      else if (deleting && n === 0) { deleting = false; i = (i + 1) % lines.length; wait = 350; }
+      setTimeout(tick, wait);
+    };
+    el.textContent = "";
+    setTimeout(tick, 400);
+  })();
+</script>
+</body>
+</html>
