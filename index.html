@@ -90,6 +90,7 @@
   }
   @media (prefers-reduced-motion: reduce) { .tag .cursor { animation: none; } .card { transition: none; } }
 </style>
+<style>#latest .latest{list-style:none;padding:0;margin:0}#latest .latest li{padding:.35em 0;border-bottom:1px solid rgba(127,127,127,.18)}#latest .when{opacity:.65;font-size:.9em;margin-right:.5em}</style>
 </head>
 <body>
 
@@ -132,6 +133,14 @@
     </div>
   </section>
 
+  <section id="latest">
+    <h2>📣 Latest</h2>
+    <ul class="latest">
+        <!-- LATEST -->
+        <li><span class="when">Oct 23, 2026</span> 🖖 <a href="https://github.com/2db2du-byte/bridge">Bridge released – a Star Trek LCARS UI for your PC with AI crew doors.</a></li>
+    </ul>
+  </section>
+
   <section id="projects">
     <h2>🚀 Things I've built</h2>
     <div class="grid">
@@ -144,6 +153,7 @@
       <a class="card" href="https://github.com/2db2du-byte/matrix-lab"><div class="e">🟩</div><h3>Matrix Lab</h3><p>A Matrix-green desktop for Linux: a raccoon cursor and a seamless falling-code live wallpaper. All free, no GPU.</p></a>
       <a class="card" href="https://github.com/2db2du-byte/homelab"><div class="e">🏠</div><h3>homelab</h3><p>One command to run self-hosted apps: Nextcloud, Paperless, Mealie, Immich and friends.</p></a>
       <a class="card" href="https://github.com/2db2du-byte/searxng"><div class="e">🔎</div><h3>Private search</h3><p>My own SearXNG search engine, started on demand, that my AIs search through too.</p></a>
+      <a class="card" href="https://github.com/2db2du-byte/bridge"><div class="e">🖖</div><h3>bridge</h3><p>Bridge: a Star Trek LCARS control center for a home PC with GPU viewscreen and AI crew doors.</p></a>
     </div>
     <p style="color:var(--muted)">All free, all MIT licensed. Take them, break them, make them better.</p>
   </section>
